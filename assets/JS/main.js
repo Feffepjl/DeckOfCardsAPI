@@ -2,7 +2,8 @@ const container = document.querySelector(".container");
 const urlBaralho = 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1';
 const criarBaralhoBtn = document.querySelector('#iniciarJogo');
 const puxarCartasBtn = document.querySelector('#puxarCartas');
-const lblIdBaralho = document.querySelector('#idBaralho');
+const h1IdBaralho = document.querySelector('#idBaralho');
+const lblIdBaralho = document.querySelector('#lblIdBaralho');
 const deckCartas = document.querySelector("#deckCartas");
 const btnJogarNovamente = document.querySelector("#jogarNovamente");
 const divCartaCorreta = document.querySelector('#cartaCorreta');
@@ -29,8 +30,9 @@ async function criarDeck (url) {
 criarBaralhoBtn.addEventListener('click', () => {
     console.log('Cliquei aqui');
     criarDeck(urlBaralho); 
-    criarBaralhoBtn.style.display = "none"; 
-    divPrincipal.style.display = "grid";
+    criarBaralhoBtn.classList.add('hidden');
+    divPrincipal.classList.remove('hidden');
+    h1IdBaralho.classList.remove('hidden');
 
 });
 
@@ -85,7 +87,7 @@ deckCartas.addEventListener('click', async (e) => {
         alert("Você acertou a carta sorteada!");
         chances = 0;
         virarCartas();
-        btnJogarNovamente.style.display = "inline-block";
+        btnJogarNovamente.classList.toggle('hidden');
     }   else {
         chances--;
         if (chances > 0) {
@@ -94,7 +96,7 @@ deckCartas.addEventListener('click', async (e) => {
         else {
             alert ("Suas chances acabaram. tente novamente!");
             virarCartas();
-            btnJogarNovamente.style.display = "inline-block";
+            btnJogarNovamente.classList.toggle('hidden');
         }
     }
 });
@@ -102,7 +104,7 @@ deckCartas.addEventListener('click', async (e) => {
 btnJogarNovamente.addEventListener('click', () => {
     const idAtual = lblIdBaralho.innerHTML;
     chances = 5;
-    btnJogarNovamente.style.display = "none";
+    btnJogarNovamente.classList.toggle('hidden');
     deckCartas.innerHTML = '';
     divCartaCorreta.innerHTML = '';
     funcPuxarCartas(idAtual, 10);

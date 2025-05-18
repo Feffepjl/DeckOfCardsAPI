@@ -9,12 +9,20 @@ body {
     text-align: center;
 }
 
+.h1.hidden {
+    display: none;
+}
+
 .container {
     display: grid;
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
     
+}
+
+.container.hidden {
+    display: none;
 }
 
 .container h1 {
@@ -36,6 +44,10 @@ body {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.container .button.hidden {
+    display: none;
 }
 
 .displayCartas {
