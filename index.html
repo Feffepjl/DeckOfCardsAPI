@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <title>Document</title>
+</head>
+
+<body class="body">
+    <h1 class="h1">Jogo de cartas</h1>
+
+    <div class="container">
+        <button id="iniciarJogo" class="button">Criar novo baralho</button>
+        <button id="jogarNovamente" class="button" style="display: none;">jogar novamente</button>
+        <h3 class="h1">Id do baralho:</h3>
+        <label id="idBaralho" class="h1"></label>
+        <h1 id="mensagem"></h1>
+    </div>
+    <div class="container" style="display: none;" id="divPrincipal">
+        <h1>Carta a ser encontrada: </br></h1>
+        <div class="displayCartas" id="cartaCorreta"></div>
+        <div class="displayCartas" id="deckCartas"></div>
+    </div>
+
+<script src="assets/JS/main.js"></script>    
+</body>
+</html>
